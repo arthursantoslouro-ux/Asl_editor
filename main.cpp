@@ -15,16 +15,20 @@ std::string linha;
 void pedirarquivo() {
     system("clear");
     std::cout << "\033[32mASL EDITOR\033[0m""\n";
-    std::cout << "insira o nome do arquivo\n";
+    std::cout << "\ninsira o nome do arquivo:\n";
     std::getline(std::cin, arquivo);
 }
 
 //aqui crianos pra abrir arquivo e carregar linhas
 void abrirarquivo(std::string arquivo) {
-    std::fstream arquivo(std::string arquivo);
-    while (std::fstream(arquivo, linha)) {
-        std::getline(cin, linha);
+    std::ifstream meuarquivo(arquivo);
+    while (std::getline(meuarquivo, linha)) {
+        std::getline(std::cin, linha);
+        std::cout << linha << std::endl;
     }
+
+system("clear");
+std::cout << "\033[32mASL EDITOR\033[0m""\n""";
 }
 
 
@@ -39,5 +43,6 @@ void abrirarquivo(std::string arquivo) {
 
 int main() {
     pedirarquivo();
+    abrirarquivo(arquivo);
     return 0;
 } 
