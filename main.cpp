@@ -9,7 +9,7 @@
 
 std::string arquivo = "";
 std::string linha;
-
+std::vector<std::string> linhas;
 
 // criei a funcao pra pedir arquivo e mandar pra string arquivo
 void pedirarquivo() {
@@ -21,13 +21,15 @@ void pedirarquivo() {
 
 //aqui crianos pra abrir arquivo e carregar linhas
 void abrirarquivo(std::string arquivo) {
+    system("clear");
     std::ifstream meuarquivo(arquivo);
     while (std::getline(meuarquivo, linha)) {
         std::getline(meuarquivo, linha);
         std::cout << linha << std::endl;
+        
     }
 
-system("clear");
+
 std::cout << "\033[32mASL EDITOR\033[0m""\n""";
 }
 
