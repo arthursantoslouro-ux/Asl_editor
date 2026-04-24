@@ -23,7 +23,7 @@ void pedirarquivo() {
 void abrirarquivo(std::string arquivo) {
     std::ifstream meuarquivo(arquivo);
     while (std::getline(meuarquivo, linha)) {
-        std::getline(std::cin, linha);
+        std::getline(meuarquivo, linha);
         std::cout << linha << std::endl;
     }
 
